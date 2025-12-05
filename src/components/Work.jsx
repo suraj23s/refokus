@@ -1,12 +1,13 @@
-import React from 'react'
+import { useMotionValueEvent, useScroll } from 'framer-motion';
+import React, { useState } from 'react'
 
 function Work() {
-  const imgArr = [
+  const [images,setImages] = useState( [
     {
       url: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       top: "50%",
       left: "50%",
-      isActive: true
+      isActive: false
     },
     {
       url: "https://plus.unsplash.com/premium_photo-1670512181061-e24282f7ee78?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -26,7 +27,34 @@ function Work() {
       left: "55%",
       isActive: false
     }
-  ];
+  ]);
+  const {scrollY,scrollYProgress}  = useScroll();
+
+  scrollYProgress.on("change",(data)=>{
+    function showImages(arr){
+      setImages(prev=>(
+        prev.map((item,index)=>(
+          arr.indexOf(index)=== -1 ? {...item,isActive: false} : {...item,isActive: true}
+        ))
+      ))
+    }
+
+    switch(Math.floor(data*100)){
+      case 0:
+        showImages([]);
+        break;
+      case 1:
+        showImages([0,1]);
+        break;
+      case 2:
+        showImages([0,1,2]);
+        break;
+      case 3:
+        showImages([0,1,2,3]);
+        break;
+    }
+  })
+
   return (
     <div className='w-full mt-10'>
   <div className="relative max-w-screen-xl mx-auto">
@@ -35,7 +63,7 @@ function Work() {
     </h1>
 
     <div className='absolute w-full h-full top-0 left-0'>
-      {imgArr.map((ele, index) => (
+      {images.map((ele, index) => (
         ele.isActive && <img
           key={index}
           src={ele.url}

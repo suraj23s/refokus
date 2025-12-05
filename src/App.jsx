@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import LocomotiveScroll from 'locomotive-scroll';
 import './App.css'
 import Card from './components/Card'
 import Navbar from './components/Navbar'
@@ -15,6 +16,7 @@ import Footer from './components/Footer'
 
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <div className='w-full bg-zinc-900'>
        <Navbar />
