@@ -9,9 +9,12 @@ import Stripes from './components/Stripes'
 import Products from './components/Products'
 import Marquees from './components/Marquees'
 import Cards from './components/Cards'
+import Footer from './components/Footer'
+
+
+
 
 function App() {
-
   return (
     <div className='w-full bg-zinc-900'>
        <Navbar />
@@ -20,6 +23,7 @@ function App() {
        <Products />
        <Marquees />
        <Cards />
+       <Footer />
     </div>
   )
 }
