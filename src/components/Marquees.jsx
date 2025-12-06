@@ -33,10 +33,10 @@ function Marquees() {
         ]
     ];
   return (
-    <div className='py-20 mt-32'>
+    <div className='py-20 mt-12 w-full overflow-hidden relative'>
         {
             data.map((items,index)=>{
-                return  <Marquee data = {items} />
+                return  <Marquee direction={index=== 0 ? "left": "right"} data = {items} />
             })
 }
     </div>
