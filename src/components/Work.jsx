@@ -26,7 +26,19 @@ function Work() {
       top: "40%",
       left: "55%",
       isActive: false
-    }
+    },
+     {
+      url: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      top: "50%",
+      left: "50%",
+      isActive: false
+    },
+    {
+      url: "https://plus.unsplash.com/premium_photo-1670512181061-e24282f7ee78?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      top: "40%",
+      left: "46%",
+      isActive: false
+    },
   ]);
   const {scrollY,scrollYProgress}  = useScroll();
 
@@ -51,6 +63,12 @@ function Work() {
         break;
       case 3:
         showImages([0,1,2,3]);
+        break;
+       case 4:
+        showImages([0,1,2,3,4]);
+        break;
+         case 5:
+        showImages([0,1,2,3,4,5]);
         break;
     }
   })
