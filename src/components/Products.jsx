@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Product from './Product'
 import { motion } from 'framer-motion';
+import vid from '../assets/vid1.mp4';
+import vid2 from '../assets/vid2.mp4';
 
 function Products() {
     const [pos,setPos] = useState(0);
@@ -56,11 +58,56 @@ const mover = (index)=>{
         <motion.div initial={{y: pos,x: "-50%"}} animate={{y: pos+`rem`}} className='window absolute h-[23rem]  w-[32rem] left-[44%]  overflow-hidden'>
             <motion.div animate={{y: -pos+`rem`}} 
             transition={{ease: [0.76, 0, 0.24, 1],duration: .6}}
-            className='w-full h-full bg-sky-100 text-black'></motion.div>
-            <motion.div animate={{y: -pos+`rem`}}  transition={{ease: [0.76, 0, 0.24, 1],duration: .5}} className='w-full h-full bg-zinc-300'></motion.div>
-            <motion.div animate={{y: -pos+`rem`}}   transition={{ease: [0.76, 0, 0.24, 1],duration: .5}} className='w-full h-full bg-zinc-500 '></motion.div>
-            <motion.div animate={{y: -pos+`rem`}}  transition={{ease: [0.76, 0, 0.24, 1],duration: .5}} className='w-full h-full bg-sky-400'></motion.div>
-             <motion.div animate={{y: -pos+`rem`}}  transition={{ease: [0.76, 0, 0.24, 1],duration: .5}} className='w-full h-full bg-sky-600'></motion.div>
+            className='w-full h-full bg-sky-100 text-black'>
+                  <video 
+    src={vid} 
+    muted 
+    autoPlay 
+    loop 
+    playsInline
+    className="w-full h-full object-cover"
+  ></video>
+            </motion.div>
+            <motion.div animate={{y: -pos+`rem`}}  transition={{ease: [0.76, 0, 0.24, 1],duration: .5}} className='w-full h-full bg-zinc-300'>
+                          <video 
+    src={vid2} 
+    muted 
+    autoPlay 
+    loop 
+    playsInline
+    className="w-full h-full object-cover"
+  ></video>
+            </motion.div>
+            <motion.div animate={{y: -pos+`rem`}}   transition={{ease: [0.76, 0, 0.24, 1],duration: .5}} className='w-full h-full bg-zinc-500 '>
+                   <video 
+    src={vid} 
+    muted 
+    autoPlay 
+    loop 
+    playsInline
+    className="w-full h-full object-cover"
+  ></video>
+            </motion.div>
+            <motion.div animate={{y: -pos+`rem`}}  transition={{ease: [0.76, 0, 0.24, 1],duration: .5}} className='w-full h-full bg-sky-400'>
+                   <video 
+    src={vid} 
+    muted 
+    autoPlay 
+    loop 
+    playsInline
+    className="w-full h-full object-cover"
+  ></video>
+            </motion.div>
+             <motion.div animate={{y: -pos+`rem`}}  transition={{ease: [0.76, 0, 0.24, 1],duration: .5}} className='w-full h-full bg-sky-600'>\
+                                         <video 
+    src={vid2} 
+    muted 
+    autoPlay 
+    loop 
+    playsInline
+    className="w-full h-full object-cover"
+  ></video>
+             </motion.div>
         </motion.div>
         </div>
     </div>

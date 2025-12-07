@@ -1,9 +1,10 @@
 import React from 'react'
 import Button from './Button'
+import { motion } from 'framer-motion'
 
-function Card({width,start,para,hover="none"}) {
+function Card({width,start,para,hover=false}) {
   return (
-    <div className={`bg-zinc-800 rounded-xl hover:${hover} p-5 text-zinc-100 ${width} min-h-[30rem]`}>
+    <motion.div whileHover={{backgroundColor: hover && "#7443ff",padding: "25px"}} className={`bg-zinc-800 rounded-xl hover:${hover} p-5 text-zinc-100 ${width} min-h-[30rem]`}>
       <div className='w-full'>
           <div className='w-full flex items-center justify-between'>
           <h3 className='text-sm'>Up Next:Culture</h3>
@@ -29,7 +30,7 @@ function Card({width,start,para,hover="none"}) {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium atque nostrum mollitia nisi ducimus incidunt earum.</p>
         }
         </div>
-    </div>
+    </motion.div>
   )
 }
 

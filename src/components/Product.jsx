@@ -3,7 +3,7 @@ import Button from './Button';
 
 function Product({data,index,mover}) {
     return (
-        <div  className='w-full h-[23rem] text-white py-10 border'>
+        <div  className='w-full h-[23rem] text-white py-10'>
             <div onMouseEnter={()=>mover(index)} className='max-w-screen-xl mx-auto flex items-center justify-between'>
                    <h1 className='text-6xl capitalize font-semibold'>{data.title}</h1>
                    <div className='w-1/3'>
